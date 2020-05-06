@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="{{host}}/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="{{host}}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{host}}/js/bootstrap.min.js"></script>
+    
+    
+        
+    <title>{{title}}</title>
+    <style>
+
+      *{
+        font-family: Oranda;
+      }
+
+        /*-- change navbar dropdown color --*/
+      .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+        background: rgb(248, 248, 248);
+        color: rgb(55,123,181) !important;
+      }
+
+      .dropdown-backdrop {
+        position: static;
+      }
+
+      .navbar-nav li > a {
+        text-transform: capitalize;
+        color: #333;
+        transition: background-color .2s, color .2s;
+        
+        &:hover,
+        &:focus {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+
+      .navbar-nav li.active > a {
+        background-color: #333;
+        color: rgb(55,123,181) !important;
+      }
+
+
+      .nav > li a:hover{
+        background: rgb(248, 248, 248) !important;
+        color: rgb(55,123,181) !important;
+      }
+
+
+      .navbar-nav li.active > a {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .navbar{
+        background: rgb(55,123,181);
+        border: 0px;
+        border-radius: 0;
+      }
+
+      .navbar *{
+        font-family: Raleway;
+        color: white !important;
+      }
+
+      body{
+        background: rgb(248, 248, 248);
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">iVoteOnline</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {{#if user}}
+                <li> <a class="nav navbar-nav navbar-right" href="/create">Create&nbsp; </a></li>
+                <li><a href="/elections">Elections</a></li>
+                <li> <a href="/mypolls">My Polls</a></li>
+                <li class="dropdown">
+                  <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.name}} <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a class='dropdown' href="/users/logout">Logout</a></li><br>
+                    <li><a href="/aboutme">About Me</a></li>
+                  </ul>
+                </li>
+            {{else}}
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>            
+                
+            {{/if}}
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+
+      </div><!-- /.container-fluid -->
+    </nav>
+ {{{body}}}
+ 
+</body>
+</html>
+
+{{!-- background: rgb(176,122,252); --}}

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Create New Poll</h2><hr>
+                        </div>
+                        <div class="col-md-12">
+                            {{#if success_msg}}
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>{{success_msg}}</strong>
+                                </div>
+                            {{/if}}
+                            {{#if error_msg}}
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>{{error_msg}}</strong>
+                                </div>
+                            {{/if}}
+                            {{#if error}}
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>{{error}}</strong>
+                                </div>
+                            {{/if}}
+                            {{#if errors}}
+                                {{#each errors}}
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>{{msg}}</strong>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                        </div>
+                        <div class="col-md-10 col-md-offset-1">
+                            <form action="/createpoll" method="post">
+                                <div class="form-group">
+                                    <label for="Title">Title: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Eg. The Best IDE Ever " required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Description: </label>
+                                    <textarea class="form-control" rows="3" name='body'></textarea>
+                                    </div>
+                                <div class="form-group" id='candidates'>
+                                    <label for="candidates">Candidates: <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control candidates"  name="candidates" placeholder="Eg- VSCode  " required>
+                                    <input type="text" class="form-control candidates"  name="candidates" placeholder="Eg- Sublime " required>
+                                    
+                                </div>
+            
+                                <button type="button" id='more' class='btn-success pull-right'>Add</button>
+
+                                <script src='/js/more.js'></script>
+
+                                <br>
+                                <script src="/js/election.js"></script>
+
+
+                                {{!-- <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
+                                <br>
+                                <div class="form-group">
+                                    <label for="expiry_date">Expiry Date</label>
+                                        <div class='input-group date' id='datetimepicker3'>
+                                            <input type='datetime-local' class='form-control date' name='expiry_date' data-date-format="DD MMMM YYYY" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br> --}}
+
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-info">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+	"name": "ivoteonline",
+	"version": "1.0.0",
+	"private": "true",
+	"description": "",
+	"scripts": {
+		"start": "nodemon server"
+	},
+	"dependencies": {
+		"bcryptjs": "*",
+		"body-parser": "*",
+		"chart.js": "^2.8.0",
+		"connect-flash": "*",
+		"cookie-parser": "*",
+		"express": "*",
+		"express-handlebars": "*",
+		"express-messages": "*",
+		"express-session": "*",
+		"express-validator": "5.3.1",
+		"moment": "^2.24.0",
+		"mongodb": "*",
+		"mongojs": "*",
+		"mongoose": "*",
+		"nodemailer": "^6.3.0",
+		"nodemon": "^2.0.3",
+		"passport": "*",
+		"passport-http": "*",
+		"passport-local": "*",
+		"serve-favicon": "^2.5.0"
+	},
+	"author": "Saurav Pathak"
+}
